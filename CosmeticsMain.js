@@ -172,7 +172,7 @@ function modifyRow(e)
         return
     }
        
-    for(let i = 0; i < 5; i++)
+    for(let i = 0; i <= 5; i++)
     {
         let btn = e.target
         btn.closest("tr").classList.add("targeted")
@@ -185,7 +185,15 @@ function modifyRow(e)
         document.getElementById("Prix").value = Tableau2[2]
         document.getElementById("Date").value = Tableau2[3]
         document.getElementById("TypesDeProduits").options[document.getElementById("TypesDeProduits").selectedIndex].text = Tableau2[4]
-        
+        if(Tableau2[5] == "Oui")
+            {
+                document.getElementById("oui").checked = true
+            }
+            else if(Tableau2[5] == "Non")
+                {
+                    document.getElementById("non").checked = true
+                }
+
         document.getElementById("modifier").addEventListener('click', function remodify(){
             let promotion
             let nomDemarque = document.getElementById("ListeDeMarques").options[document.getElementById("ListeDeMarques").selectedIndex].text;
