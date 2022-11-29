@@ -88,7 +88,7 @@ input:not(#oui, #non)
     width: 60%;
     height: 4vh;
 }
-input
+input:not(#non)
 {
     margin-left: 20%; ;
 }
