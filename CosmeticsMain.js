@@ -148,11 +148,7 @@ document.getElementById("ajouter").addEventListener('click', function Add(){
 
 function deleteRow(e)
 {
-if(!e.target.classList.contains("delete"))
-    {
-        return
-    }
-    
+if(e.target.classList.contains("delete"))
     {
     let btn = e.target;
     btn.closest("tr").remove()
@@ -167,17 +163,13 @@ function modifyRow(e)
     let btn = e.target
 
 
-    if(!e.target.classList.contains("modify"))
-    {
-        return
-    }
+    if(e.target.classList.contains("modify"))
        
+    btn.closest("tr").classList.add("targeted")
+    document.getElementById("modifier").classList.remove("display")
+
     for(let i = 0; i <= 5; i++)
-    {
-        let btn = e.target
-        btn.closest("tr").classList.add("targeted")
-        document.getElementById("modifier").classList.remove("display")
-        
+    {   
         Tableau2.push(btn.closest("tr").cells[i].innerHTML)
     }
         document.getElementById("ProductName").value = Tableau2[0]
